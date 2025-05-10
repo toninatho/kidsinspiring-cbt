@@ -1,607 +1,448 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>KidsInspiring Nation CBT Test</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 20px; }
-    h1, h2 { color: #2E5EAA; }
-    .question { margin-bottom: 20px; }
-    .question p { font-weight: bold; }
-    .result { margin-top: 20px; font-size: 1.2em; font-weight: bold; }
-    .section { margin-bottom: 40px; }
-    .info-section { margin-bottom: 30px; }
-    #timer { font-size: 1.2em; color: #d9534f; margin-bottom: 20px; }
-    #answersOutput {
-      border: 1px solid #ccc; 
-      padding: 10px; 
-      margin-top: 20px; 
-      display: none; 
-    }
-  </style>
-</head>
-<body>
-  <h1>KidsInspiring Nation CBT Test</h1>
-
-  <!-- Timer Display -->
-  <div id="timer">Time Left: 25:00</div>
-
-  <!-- Personal Info Section -->
-  <div class="info-section">
-    <h2>Personal Information</h2>
-    <label for="firstName">First Name:</label><br>
-    <input type="text" id="firstName" name="firstName" required><br><br>
-
-    <label for="middleName">Middle Name:</label><br>
-    <input type="text" id="middleName" name="middleName"><br><br>
-
-    <label for="lastName">Last Name:</label><br>
-    <input type="text" id="lastName" name="lastName" required><br><br>
-
-    <label for="dob">Date of Birth:</label><br>
-    <input type="date" id="dob" name="dob" required><br><br>
-  </div>
-
-  <form id="quizForm">
-    <!-- ==========================
-         SECTION 1: CORE VALUES & BELIEFS (Q1 - Q10)
-         ========================== -->
-    <div class="section" id="section1">
-      <h2>Section 1: Core Values & Beliefs (Questions 1–10)</h2>
-
-      <!-- Q1 -->
-      <div class="question">
-        <p>1. What is the primary mission of KidsInspiring Nation?</p>
-        <label><input type="radio" name="q1" value="B"> B) To help children build a strong spiritual foundation</label><br>
-        <label><input type="radio" name="q1" value="A"> A) To entertain children with fun activities</label><br>
-        <label><input type="radio" name="q1" value="C"> C) To prepare children for secular success only</label><br>
-        <label><input type="radio" name="q1" value="D"> D) To focus only on academic excellence</label>
-      </div>
-
-      <!-- Q2 -->
-      <div class="question">
-        <p>2. What does KIN emphasize as a key value in children's development?</p>
-        <label><input type="radio" name="q2" value="A"> A) Grit and obedience</label><br>
-        <label><input type="radio" name="q2" value="B"> B) Wealth and fame</label><br>
-        <label><input type="radio" name="q2" value="C"> C) Popularity and competition</label><br>
-        <label><input type="radio" name="q2" value="D"> D) Relaxation and enjoyment</label>
-      </div>
-
-      <!-- Q3 -->
-      <div class="question">
-        <p>3. Which of these best describes spiritual dedication?</p>
-        <label><input type="radio" name="q3" value="A"> A) Being committed to God’s Word and living by His principles</label><br>
-        <label><input type="radio" name="q3" value="B"> B) Attending church once a year</label><br>
-        <label><input type="radio" name="q3" value="C"> C) Reading the Bible only when necessary</label><br>
-        <label><input type="radio" name="q3" value="D"> D) Ignoring spiritual growth and focusing only on school</label>
-      </div>
-
-      <!-- Q4 -->
-      <div class="question">
-        <p>4. What is the best way to explain obedience to a child?</p>
-        <label><input type="radio" name="q4" value="A"> A) Use relatable examples to show the benefits of obeying God</label><br>
-        <label><input type="radio" name="q4" value="B"> B) Tell them to follow rules without questioning</label><br>
-        <label><input type="radio" name="q4" value="C"> C) Ignore their curiosity</label><br>
-        <label><input type="radio" name="q4" value="D"> D) Tell them obedience is only for adults</label>
-      </div>
-
-      <!-- Q5 -->
-      <div class="question">
-        <p>5. Why does KIN emphasize the memorization of Psalm 119?</p>
-        <label><input type="radio" name="q5" value="B"> B) To shape their character and strengthen their faith</label><br>
-        <label><input type="radio" name="q5" value="A"> A) To help children win prizes</label><br>
-        <label><input type="radio" name="q5" value="C"> C) To increase their intelligence</label><br>
-        <label><input type="radio" name="q5" value="D"> D) To keep them busy</label>
-      </div>
-
-      <!-- Q6 -->
-      <div class="question">
-        <p>6. What does the “G” in KIN’s Core Values stand for?</p>
-        <label><input type="radio" name="q6" value="B"> B) Grit</label><br>
-        <label><input type="radio" name="q6" value="A"> A) Growth</label><br>
-        <label><input type="radio" name="q6" value="C"> C) Generosity</label><br>
-        <label><input type="radio" name="q6" value="D"> D) Glory</label>
-      </div>
-
-      <!-- Q7 -->
-      <div class="question">
-        <p>7. What is the meaning of “Grit” in KIN’s values?</p>
-        <label><input type="radio" name="q7" value="A"> A) The ability to never give up and give all it takes</label><br>
-        <label><input type="radio" name="q7" value="B"> B) Being the strongest person in a group</label><br>
-        <label><input type="radio" name="q7" value="C"> C) Having a competitive mindset</label><br>
-        <label><input type="radio" name="q7" value="D"> D) Only working hard in school</label>
-      </div>
-
-      <!-- Q8 -->
-      <div class="question">
-        <p>8. What does the “O” in KIN’s Core Values stand for?</p>
-        <label><input type="radio" name="q8" value="A"> A) Obedience</label><br>
-        <label><input type="radio" name="q8" value="B"> B) Opportunity</label><br>
-        <label><input type="radio" name="q8" value="C"> C) Order</label><br>
-        <label><input type="radio" name="q8" value="D"> D) Offering</label>
-      </div>
-
-      <!-- Q9 -->
-      <div class="question">
-        <p>9. What does the “S” in KIN’s Core Values stand for?</p>
-        <label><input type="radio" name="q9" value="A"> A) Spirit</label><br>
-        <label><input type="radio" name="q9" value="B"> B) Success</label><br>
-        <label><input type="radio" name="q9" value="C"> C) Strength</label><br>
-        <label><input type="radio" name="q9" value="D"> D) Strategy</label>
-      </div>
-
-      <!-- Q10 -->
-      <div class="question">
-        <p>10. What scripture reference supports the “Spirit” value in KIN?</p>
-        <label><input type="radio" name="q10" value="A"> A) Romans 8</label><br>
-        <label><input type="radio" name="q10" value="B"> B) Genesis 1</label><br>
-        <label><input type="radio" name="q10" value="C"> C) Daniel 1:8</label><br>
-        <label><input type="radio" name="q10" value="D"> D) John 12:24</label>
-      </div>
-    </div>
-    <!-- end section1 -->
-
-    <!-- ==========================
-         SECTION 2: KEY DATES (Q11 - Q20)
-         ========================== -->
-    <div class="section" id="section2">
-      <h2>Section 2: Key Dates (Questions 11–20)</h2>
-
-      <div class="question">
-        <p>11. KidsInspiring Nation began as a Sunday school program in __________.</p>
-        <input type="text" name="q11">
-      </div>
-
-      <div class="question">
-        <p>12. The Jesus Christ Concert (TJC 1.0) was first held in __________.</p>
-        <input type="text" name="q12">
-      </div>
-
-      <div class="question">
-        <p>13. The Psalm 119 Challenge started globally in __________.</p>
-        <input type="text" name="q13">
-      </div>
-
-      <div class="question">
-        <p>14. The first Psalm 119 challenge ran from __________ to __________.</p>
-        <input type="text" name="q14a" placeholder="Start Date">
-        to
-        <input type="text" name="q14b" placeholder="End Date">
-      </div>
-
-      <div class="question">
-        <p>15. KidsInspiring Global began due to COVID-19 in __________.</p>
-        <input type="text" name="q15">
-      </div>
-
-      <div class="question">
-        <p>16. The Scripture Class, a weekly study on Psalm 119, started in __________.</p>
-        <input type="text" name="q16">
-      </div>
-
-      <div class="question">
-        <p>17. The Psalm 119 National Values Challenge saw __________ participants in 2021.</p>
-        <input type="text" name="q17">
-      </div>
-
-      <div class="question">
-        <p>18. The Bible Challenge, a two-year initiative, started in __________.</p>
-        <input type="text" name="q18">
-      </div>
-
-      <div class="question">
-        <p>19. KidsInspiring became a nation on __________, referencing Genesis 12:1–3.</p>
-        <input type="text" name="q19">
-      </div>
-
-      <div class="question">
-        <p>20. The 75th anniversary of KidsInspiring Nation will be celebrated in __________.</p>
-        <input type="text" name="q20">
-      </div>
-    </div>
-    <!-- end section2 -->
-
-    <!-- ==========================
-         SECTION 3: KIN PROGRAMS & PRACTICES (Q21 - Q25)
-         ========================== -->
-    <div class="section" id="section3">
-      <h2>Section 3: KIN Programs & Practices (Questions 21–25)</h2>
-
-      <div class="question">
-        <p>21. What is the purpose of the KIN Monthly Daily Affirmation?</p>
-        <label><input type="radio" name="q21" value="B"> B) To declare daily faith-filled words based on God’s promises</label><br>
-        <label><input type="radio" name="q21" value="A"> A) To help god-children memorize random phrases</label><br>
-        <label><input type="radio" name="q21" value="C"> C) To recite motivational quotes</label><br>
-        <label><input type="radio" name="q21" value="D"> D) To replace Bible study with affirmations</label>
-      </div>
-
-      <div class="question">
-        <p>22. What is the significance of KIN Declarations?</p>
-        <label><input type="radio" name="q22" value="A"> A) They are scripture-based declarations that release faith into the atmosphere</label><br>
-        <label><input type="radio" name="q22" value="B"> B) They are used for personal motivation only</label><br>
-        <label><input type="radio" name="q22" value="C"> C) They are meant to replace prayer</label><br>
-        <label><input type="radio" name="q22" value="D"> D) They are used only during special events</label>
-      </div>
-
-      <div class="question">
-        <p>23. How often is the Daniel Fast (goDs Fast) held?</p>
-        <label><input type="radio" name="q23" value="B"> B) Annually in January</label><br>
-        <label><input type="radio" name="q23" value="A"> A) Monthly</label><br>
-        <label><input type="radio" name="q23" value="C"> C) Every Sunday</label><br>
-        <label><input type="radio" name="q23" value="D"> D) Every three years</label>
-      </div>
-
-      <div class="question">
-        <p>24. What is the Always-On-Bible practice?</p>
-        <label><input type="radio" name="q24" value="A"> A) A rule that god-children must carry their Bible everywhere</label><br>
-        <label><input type="radio" name="q24" value="B"> B) A digital Bible study platform</label><br>
-        <label><input type="radio" name="q24" value="C"> C) A reminder to read the Bible once a week</label><br>
-        <label><input type="radio" name="q24" value="D"> D) A Bible that never turns off</label>
-      </div>
-
-      <div class="question">
-        <p>25. What is the purpose of the KIND Devotional?</p>
-        <label><input type="radio" name="q25" value="A"> A) To help god-children read, discuss, pray, and memorize God’s Word daily</label><br>
-        <label><input type="radio" name="q25" value="B"> B) To be used only on Sundays</label><br>
-        <label><input type="radio" name="q25" value="C"> C) To replace personal Bible study</label><br>
-        <label><input type="radio" name="q25" value="D"> D) To focus only on memorization</label>
-      </div>
-    </div>
-    <!-- end section3 -->
-
-    <!-- ==========================
-         SECTION 4: ADDITIONAL KIN PROGRAMS & SPIRITUAL PRACTICES (Q26 - Q42)
-         ========================== -->
-    <div class="section" id="section4">
-      <h2>Section 4: Additional KIN Programs & Spiritual Practices (Questions 26–42)</h2>
-
-      <div class="question">
-        <p>26. What is the purpose of the KIN Monthly Daily Affirmation?</p>
-        <label><input type="radio" name="q26" value="B"> B) To declare daily faith-filled words based on God’s promises</label><br>
-        <label><input type="radio" name="q26" value="A"> A) To help god-children memorize random phrases</label><br>
-        <label><input type="radio" name="q26" value="C"> C) To recite motivational quotes</label><br>
-        <label><input type="radio" name="q26" value="D"> D) To replace Bible study with affirmations</label>
-      </div>
-
-      <div class="question">
-        <p>27. What is the significance of KIN Declarations?</p>
-        <label><input type="radio" name="q27" value="A"> A) They are scripture-based declarations that release faith into the atmosphere</label><br>
-        <label><input type="radio" name="q27" value="B"> B) They are used for personal motivation only</label><br>
-        <label><input type="radio" name="q27" value="C"> C) They are meant to replace prayer</label><br>
-        <label><input type="radio" name="q27" value="D"> D) They are used only during special events</label>
-      </div>
-
-      <div class="question">
-        <p>28. How often is the Daniel Fast (goDs Fast) held?</p>
-        <label><input type="radio" name="q28" value="B"> B) Annually in January</label><br>
-        <label><input type="radio" name="q28" value="A"> A) Monthly</label><br>
-        <label><input type="radio" name="q28" value="C"> C) Every Sunday</label><br>
-        <label><input type="radio" name="q28" value="D"> D) Every three years</label>
-      </div>
-
-      <div class="question">
-        <p>29. During the Daniel Fast, how often do god-children pray?</p>
-        <label><input type="radio" name="q29" value="B"> B) Every 3 hours</label><br>
-        <label><input type="radio" name="q29" value="A"> A) Once a day</label><br>
-        <label><input type="radio" name="q29" value="C"> C) Every 12 hours</label><br>
-        <label><input type="radio" name="q29" value="D"> D) Only in the mornings</label>
-      </div>
-
-      <div class="question">
-        <p>30. What is required of god-children on KIN Fast days?</p>
-        <label><input type="radio" name="q30" value="A"> A) To fast on Sundays and during weekly meetings</label><br>
-        <label><input type="radio" name="q30" value="B"> B) To avoid food completely for three days</label><br>
-        <label><input type="radio" name="q30" value="C"> C) To fast only when convenient</label><br>
-        <label><input type="radio" name="q30" value="D"> D) To fast once a month</label>
-      </div>
-
-      <div class="question">
-        <p>31. How often does the Nehemiah Fast occur?</p>
-        <label><input type="radio" name="q31" value="B"> B) Every 4 years</label><br>
-        <label><input type="radio" name="q31" value="A"> A) Annually</label><br>
-        <label><input type="radio" name="q31" value="C"> C) Every 7 years</label><br>
-        <label><input type="radio" name="q31" value="D"> D) Monthly</label>
-      </div>
-
-      <div class="question">
-        <p>32. What does PITHS stand for?</p>
-        <label><input type="radio" name="q32" value="B"> B) Praying in the Holy Spirit</label><br>
-        <label><input type="radio" name="q32" value="A"> A) Persistent Intercession Through Holy Spirit</label><br>
-        <label><input type="radio" name="q32" value="C"> C) People Inspired To Hear Spirit</label><br>
-        <label><input type="radio" name="q32" value="D"> D) Power In True Holy Submission</label>
-      </div>
-
-      <div class="question">
-        <p>33. What is the significance of the KIN ‘god’ prefix?</p>
-        <label><input type="radio" name="q33" value="A"> A) It signifies that each child is part of God’s divine family and mission</label><br>
-        <label><input type="radio" name="q33" value="B"> B) It is a title given only to the most active members</label><br>
-        <label><input type="radio" name="q33" value="C"> C) It replaces their real names</label><br>
-        <label><input type="radio" name="q33" value="D"> D) It is used only for boys</label>
-      </div>
-
-      <div class="question">
-        <p>34. What is the Always-On-Bible practice?</p>
-        <label><input type="radio" name="q34" value="A"> A) A rule that god-children must carry their Bible everywhere</label><br>
-        <label><input type="radio" name="q34" value="B"> B) A digital Bible study platform</label><br>
-        <label><input type="radio" name="q34" value="C"> C) A reminder to read the Bible once a week</label><br>
-        <label><input type="radio" name="q34" value="D"> D) A Bible that never turns off</label>
-      </div>
-
-      <div class="question">
-        <p>35. What is the purpose of the KIND Devotional?</p>
-        <label><input type="radio" name="q35" value="A"> A) To help god-children read, discuss, pray, and memorize God’s Word daily</label><br>
-        <label><input type="radio" name="q35" value="B"> B) To be used only on Sundays</label><br>
-        <label><input type="radio" name="q35" value="C"> C) To replace personal Bible study</label><br>
-        <label><input type="radio" name="q35" value="D"> D) To focus only on memorization</label>
-      </div>
-
-      <div class="question">
-        <p>36. What is the goDs Experience (Cave of Adullam)?</p>
-        <label><input type="radio" name="q36" value="A"> A) A weekly physical meeting for god-children to strengthen their spirit and learn KIN values</label><br>
-        <label><input type="radio" name="q36" value="B"> B) A yearly conference for pastors</label><br>
-        <label><input type="radio" name="q36" value="C"> C) A school for training teachers</label><br>
-        <label><input type="radio" name="q36" value="D"> D) A secular event for young leaders</label>
-      </div>
-
-      <div class="question">
-        <p>37. When does the goDs Experience (Cave of Adullam) take place?</p>
-        <label><input type="radio" name="q37" value="B"> B) Sundays at 8 AM</label><br>
-        <label><input type="radio" name="q37" value="A"> A) Every Monday evening</label><br>
-        <label><input type="radio" name="q37" value="C"> C) Once a year</label><br>
-        <label><input type="radio" name="q37" value="D"> D) Every Friday night</label>
-      </div>
-
-      <div class="question">
-        <p>38. What is the focus of Scripture Class?</p>
-        <label><input type="radio" name="q38" value="A"> A) Helping children learn, love, and live the Word of God</label><br>
-        <label><input type="radio" name="q38" value="B"> B) Training children for secular debates</label><br>
-        <label><input type="radio" name="q38" value="C"> C) Teaching leadership without biblical foundations</label><br>
-        <label><input type="radio" name="q38" value="D"> D) Memorizing the shortest Bible verses only</label>
-      </div>
-
-      <div class="question">
-        <p>39. What is the Psalm 119 Community Challenge?</p>
-        <label><input type="radio" name="q39" value="A"> A) A global initiative encouraging god-children to memorize all 176 verses of Psalm 119</label><br>
-        <label><input type="radio" name="q39" value="B"> B) A Sunday School competition</label><br>
-        <label><input type="radio" name="q39" value="C"> C) A challenge for pastors</label><br>
-        <label><input type="radio" name="q39" value="D"> D) A yearly talent show</label>
-      </div>
-
-      <div class="question">
-        <p>40. What is the purpose of goDcells?</p>
-        <label><input type="radio" name="q40" value="A"> A) Weekly local assemblies where god-children share KIND teachings</label><br>
-        <label><input type="radio" name="q40" value="B"> B) Special classes for new god-children only</label><br>
-        <label><input type="radio" name="q40" value="C"> C) Social gatherings without Bible study</label><br>
-        <label><input type="radio" name="q40" value="D"> D) A leadership competition</label>
-      </div>
-
-      <div class="question">
-        <p>41. What is The Jesus Christ Concert (TJC)?</p>
-        <label><input type="radio" name="q41" value="A"> A) A yearly event that marks the birth of Christ by making Him the focus of Christmas</label><br>
-        <label><input type="radio" name="q41" value="B"> B) A concert featuring only Christian music artists</label><br>
-        <label><input type="radio" name="q41" value="C"> C) A fundraising event for churches</label><br>
-        <label><input type="radio" name="q41" value="D"> D) A general music competition</label>
-      </div>
-
-      <div class="question">
-        <p>42. What are TJC Crusades?</p>
-        <label><input type="radio" name="q42" value="A"> A) Mini-outreaches designed to bring young people closer to Jesus</label><br>
-        <label><input type="radio" name="q42" value="B"> B) Weekly church services</label><br>
-        <label><input type="radio" name="q42" value="C"> C) Training sessions for adult pastors</label><br>
-        <label><input type="radio" name="q42" value="D"> D) Business seminars for children</label>
-      </div>
-    </div>
-    <!-- end section4 -->
-
-    <!-- ==========================
-         SECTION 5: ADDITIONAL MISSION & CORE VALUES (Q43 - Q48)
-         ========================== -->
-    <div class="section" id="section5">
-      <h2>Section 5: Additional Mission & Core Values (Questions 43–48)</h2>
-
-      <div class="question">
-        <p>43. What does the “D” in KIN’s Core Values stand for?</p>
-        <label><input type="radio" name="q43" value="B"> B) Dedication</label><br>
-        <label><input type="radio" name="q43" value="A"> A) Discipline</label><br>
-        <label><input type="radio" name="q43" value="C"> C) Determination</label><br>
-        <label><input type="radio" name="q43" value="D"> D) Devotion</label>
-      </div>
-
-      <div class="question">
-        <p>44. What is the meaning of Dedication in KIN’s core values?</p>
-        <label><input type="radio" name="q44" value="B"> B) The audacity to work until Christ is established on Earth in Nations</label><br>
-        <label><input type="radio" name="q44" value="A"> A) Working hard until personal success is achieved</label><br>
-        <label><input type="radio" name="q44" value="C"> C) Only caring about one's own progress</label><br>
-        <label><input type="radio" name="q44" value="D"> D) Following rules without question</label>
-      </div>
-
-      <div class="question">
-        <p>45. What does the phrase “raising goDs, building Nations” signify in the vision of KIN?</p>
-        <label><input type="radio" name="q45" value="A"> A) Training children to be leaders and nation builders</label><br>
-        <label><input type="radio" name="q45" value="B"> B) Focusing solely on academic achievement</label><br>
-        <label><input type="radio" name="q45" value="C"> C) Only promoting spiritual growth without practical impact</label><br>
-        <label><input type="radio" name="q45" value="D"> D) Encouraging children to become celebrities</label>
-      </div>
-
-      <div class="question">
-        <p>46. According to KIN's mission, what are god-children expected to develop?</p>
-        <label><input type="radio" name="q46" value="A"> A) Their Spirit, Skills, and serve their Nations</label><br>
-        <label><input type="radio" name="q46" value="B"> B) Their academic prowess only</label><br>
-        <label><input type="radio" name="q46" value="C"> C) Their sports and recreational talents only</label><br>
-        <label><input type="radio" name="q46" value="D"> D) Their entertainment skills</label>
-      </div>
-
-      <div class="question">
-        <p>47. What is the primary goal of the Psalm 119 Community Challenge?</p>
-        <label><input type="radio" name="q47" value="A"> A) To encourage god-children to memorize all 176 verses of Psalm 119</label><br>
-        <label><input type="radio" name="q47" value="B"> B) To test children on secular knowledge</label><br>
-        <label><input type="radio" name="q47" value="C"> C) To compete with other communities in recitation speed</label><br>
-        <label><input type="radio" name="q47" value="D"> D) To encourage children to write their own psalms</label>
-      </div>
-
-      <div class="question">
-        <p>48. What is the overall impact intended by KidsInspiring Nation?</p>
-        <label><input type="radio" name="q48" value="A"> A) To create a generation of god-children who transform nations through their faith and service</label><br>
-        <label><input type="radio" name="q48" value="B"> B) To focus solely on individual success</label><br>
-        <label><input type="radio" name="q48" value="C"> C) To promote entertainment and leisure</label><br>
-        <label><input type="radio" name="q48" value="D"> D) To build institutions without spiritual guidance</label>
-      </div>
-    </div>
-    <!-- end section5 -->
-
-    <!-- ==========================
-         SECTION 6: ADDITIONAL MISSION & VISION (Q49 - Q50)
-         ========================== -->
-    <div class="section" id="section6">
-      <h2>Section 6: Additional Mission & Vision (Questions 49–50)</h2>
-
-      <div class="question">
-        <p>49. How does the evolution of the vision—from ‘live an inspiration’ to ‘raising children as gods’ to ‘raising goDs, building Nations’—reflect KIN’s growth?</p>
-        <label><input type="radio" name="q49" value="A"> A) It shows that KIN's focus has shifted from individual inspiration to nation-building</label><br>
-        <label><input type="radio" name="q49" value="B"> B) It indicates that KIN no longer values inspiration</label><br>
-        <label><input type="radio" name="q49" value="C"> C) It reflects a change in KIN's leadership style only</label><br>
-        <label><input type="radio" name="q49" value="D"> D) It is only a marketing slogan</label>
-      </div>
-
-      <div class="question">
-        <p>50. What are the three main aspects of KIN’s mission for god-children?</p>
-        <label><input type="radio" name="q50" value="A"> A) Develop their Spirit, discover their Skills, and serve their Nations</label><br>
-        <label><input type="radio" name="q50" value="B"> B) Gain wealth, earn praise, and build personal empires</label><br>
-        <label><input type="radio" name="q50" value="C"> C) Focus solely on academic success, athleticism, and entertainment</label><br>
-        <label><input type="radio" name="q50" value="D"> D) None of the above</label>
-      </div>
-    </div>
-    <!-- end section6 -->
-
-    <input type="button" value="Submit Test" onclick="gradeQuiz()">
-  </form>
-
-  <div class="result" id="result"></div>
-  <div id="answersOutput"></div>
-
-  <script>
-    // 25-minute countdown in seconds
-    let timeLeft = 25 * 60; 
-    let countdownInterval = setInterval(updateTimer, 1000);
-
-    function updateTimer() {
-      let timerElement = document.getElementById("timer");
-      let minutes = Math.floor(timeLeft / 60);
-      let seconds = timeLeft % 60;
-      seconds = seconds < 10 ? "0" + seconds : seconds;
-      timerElement.textContent = "Time Left: " + minutes + ":" + seconds;
-      timeLeft--;
-
-      if (timeLeft < 0) {
-        clearInterval(countdownInterval);
-        gradeQuiz();
-      }
-    }
-
-    // MCQ Answer key (example)
-    const mcqAnswers = {
-      q1: "B", q2: "A", q3: "A", q4: "A", q5: "B",
-      q6: "B", q7: "A", q8: "A", q9: "A", q10: "A",
-      q21: "B", q22: "A", q23: "B", q24: "A", q25: "A",
-      q26: "B", q27: "A", q28: "B", q29: "B", q30: "A",
-      q31: "B", q32: "B", q33: "A", q34: "A", q35: "A",
-      q36: "A", q37: "B", q38: "A", q39: "A", q40: "A",
-      q41: "A", q42: "A",
-      q43: "B", q44: "B", q45: "A", q46: "A", q47: "A", q48: "A",
-      q49: "A", q50: "A"
-    };
-
-    // Fill-in-the-blank answers for Q11 - Q20
-    const fibAnswers = {
-      q11: "Mid-2017",
-      q12: "2018",
-      q13: "2018",
-      q14a: "April 1", q14b: "July 1",
-      q15: "2020",
-      q16: "2021",
-      q17: "11,917",
-      q18: "2022",
-      q19: "July 2, 2022",
-      q20: "July 2, 2092"
-    };
-
-    function gradeQuiz() {
-      clearInterval(countdownInterval); // stop the timer
-
-      // Personal Info
-      let firstName = document.getElementById("firstName").value.trim();
-      let middleName = document.getElementById("middleName").value.trim();
-      let lastName  = document.getElementById("lastName").value.trim();
-      let dob       = document.getElementById("dob").value.trim();
-
-      // Score counters
-      let score = 0;
-      let total = 50; // total number of questions
-
-      // Grade MCQ
-      for (let q in mcqAnswers) {
-        let radios = document.getElementsByName(q);
-        for (let i = 0; i < radios.length; i++) {
-          if (radios[i].checked && radios[i].value === mcqAnswers[q]) {
-            score++;
-          }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bible Crossword: Numbers 13-22</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6; /* Tailwind gray-100 */
         }
-      }
+        .crossword-grid {
+            display: grid;
+            border: 2px solid #4b5563; /* Tailwind gray-700 */
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .grid-cell {
+            width: 40px;
+            height: 40px;
+            border: 1px solid #d1d5db; /* Tailwind gray-300 */
+            text-align: center;
+            font-size: 1.25rem; /* Tailwind text-xl */
+            text-transform: uppercase;
+            position: relative;
+            background-color: white;
+            caret-color: #3b82f6; /* Tailwind blue-500 */
+        }
+        .grid-cell input {
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            border: none;
+            font-size: 1.25rem;
+            text-transform: uppercase;
+            background-color: transparent;
+            outline: none;
+            padding: 0;
+            margin: 0;
+        }
+        .grid-cell input:focus {
+            background-color: #eff6ff; /* Tailwind blue-50 */
+        }
+        .grid-cell.empty {
+            background-color: #4b5563; /* Tailwind gray-700 */
+            border: 1px solid #4b5563;
+        }
+        .cell-number {
+            position: absolute;
+            top: 1px;
+            left: 2px;
+            font-size: 0.65rem; /* Tailwind text-xs */
+            color: #6b7280; /* Tailwind gray-500 */
+            pointer-events: none;
+        }
+        .clue-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .clue-list li {
+            margin-bottom: 0.5rem; /* Tailwind mb-2 */
+            font-size: 0.875rem; /* Tailwind text-sm */
+        }
+        .clue-list strong {
+            color: #1f2937; /* Tailwind gray-800 */
+        }
+        .correct {
+            background-color: #d1fae5 !important; /* Tailwind green-100 */
+            color: #065f46 !important; /* Tailwind green-800 */
+        }
+        .incorrect {
+            background-color: #fee2e2 !important; /* Tailwind red-100 */
+            color: #991b1b !important; /* Tailwind red-800 */
+        }
+        .focused-word-cell {
+            background-color: #e0f2fe !important; /* Tailwind light-blue-100 */
+        }
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .grid-cell {
+                width: 30px;
+                height: 30px;
+                font-size: 1rem;
+            }
+            .grid-cell input {
+                font-size: 1rem;
+            }
+            .cell-number {
+                font-size: 0.5rem;
+            }
+            .container {
+                padding: 0.5rem; /* Tailwind p-2 */
+            }
+            .clues-container {
+                flex-direction: column;
+            }
+            .clues-column {
+                width: 100% !important;
+                margin-bottom: 1rem; /* Tailwind mb-4 */
+            }
+        }
+        @media (max-width: 480px) {
+             .grid-cell {
+                width: 25px;
+                height: 25px;
+                font-size: 0.875rem;
+            }
+            .grid-cell input {
+                font-size: 0.875rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-4 md:p-8">
+    <div class="container mx-auto max-w-4xl bg-white p-6 rounded-lg shadow-xl">
+        <h1 class="text-2xl md:text-3xl font-bold text-center text-gray-800 mb-6">Bible Crossword: Numbers 13-22</h1>
 
-      // Grade Fill-in-the-Blank (Q11 - Q20)
-      // Q14 has two parts
-      let q11Val = document.getElementsByName("q11")[0]?.value.trim() || "";
-      if (q11Val.toLowerCase() === fibAnswers.q11.toLowerCase()) score++;
+        <div class="flex flex-col md:flex-row">
+            <div id="crossword-container" class="md:w-2/3 md:pr-4">
+                <div id="crossword-grid" class="crossword-grid">
+                    </div>
+            </div>
+            <div id="clues-container" class="md:w-1/3 md:pl-4 mt-6 md:mt-0">
+                <div class="clues-column">
+                    <h2 class="text-xl font-semibold text-gray-700 mb-3">Across</h2>
+                    <ul id="across-clues" class="clue-list"></ul>
+                </div>
+                <div class="clues-column mt-6 md:mt-0">
+                    <h2 class="text-xl font-semibold text-gray-700 mb-3">Down</h2>
+                    <ul id="down-clues" class="clue-list"></ul>
+                </div>
+            </div>
+        </div>
 
-      let q12Val = document.getElementsByName("q12")[0]?.value.trim() || "";
-      if (q12Val === fibAnswers.q12) score++;
+        <div class="mt-8 text-center">
+            <button id="check-button" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-6 rounded-lg shadow mr-2 transition duration-150 ease-in-out">Check Answers</button>
+            <button id="reveal-button" class="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-6 rounded-lg shadow transition duration-150 ease-in-out">Reveal All</button>
+            <p id="feedback-message" class="mt-4 text-sm text-gray-600"></p>
+        </div>
+    </div>
 
-      let q13Val = document.getElementsByName("q13")[0]?.value.trim() || "";
-      if (q13Val === fibAnswers.q13) score++;
+    <script>
+        const puzzleWords = [
+            // Word, Clue, Start Row (0-indexed), Start Col (0-indexed), Direction, Number
+            { word: "CANAAN", clue: "Land flowing with milk and honey", r: 1, c: 0, dir: "across", num: 1 },
+            { word: "CALEB", clue: "Faithful spy who encouraged Israel", r: 1, c: 0, dir: "down", num: 1 },
+            { word: "BALAAM", clue: "Prophet whose donkey spoke", r: 3, c: 2, dir: "across", num: 2 },
+            { word: "MOAB", clue: "Region whose king hired Balaam", r: 1, c: 5, dir: "down", num: 3 },
+            { word: "JOSHUA", clue: "Spy who later led Israel into Canaan", r: 0, c: 2, dir: "down", num: 4 },
+            { word: "AARON", clue: "His staff budded, confirming his priesthood", r: 5, c: 0, dir: "across", num: 5 },
+            { word: "KORAH", clue: "Led a revolt against Moses and Aaron", r: 5, c: 0, dir: "down", num: 5 },
+            { word: "DONKEY", clue: "Animal that saw the angel before Balaam did", r: 7, c: 2, dir: "across", num: 6 },
+            { word: "MOSES", clue: "Struck the rock instead of speaking to it", r: 5, c: 4, dir: "down", num: 7 },
+            { word: "KADESH", clue: "Place of rebellion and turning back", r: 9, c: 0, dir: "across", num: 8 },
+            { word: "GIANTS", clue: "How ten spies described Canaan's inhabitants", r: 0, c: 4, dir: "across", num: 9},
+            { word: "SPIES", clue: "Men sent to explore the Promised Land", r: 3, c: 7, dir: "down", num: 10}
+        ];
 
-      let q14aVal = document.getElementsByName("q14a")[0]?.value.trim() || "";
-      let q14bVal = document.getElementsByName("q14b")[0]?.value.trim() || "";
-      if (q14aVal.toLowerCase() === fibAnswers.q14a.toLowerCase() &&
-          q14bVal.toLowerCase() === fibAnswers.q14b.toLowerCase()) {
-        score++;
-      }
+        let gridSize = { rows: 10, cols: 8 }; // Default, will be adjusted
+        const gridData = []; // Stores references to input elements and correct letters
 
-      let q15Val = document.getElementsByName("q15")[0]?.value.trim() || "";
-      if (q15Val === fibAnswers.q15) score++;
+        function calculateGridSize() {
+            let maxR = 0;
+            let maxC = 0;
+            puzzleWords.forEach(pw => {
+                if (pw.dir === "across") {
+                    maxR = Math.max(maxR, pw.r);
+                    maxC = Math.max(maxC, pw.c + pw.word.length -1);
+                } else { // down
+                    maxR = Math.max(maxR, pw.r + pw.word.length -1);
+                    maxC = Math.max(maxC, pw.c);
+                }
+            });
+            gridSize.rows = maxR + 1;
+            gridSize.cols = maxC + 1;
+        }
 
-      let q16Val = document.getElementsByName("q16")[0]?.value.trim() || "";
-      if (q16Val === fibAnswers.q16) score++;
 
-      let q17Val = document.getElementsByName("q17")[0]?.value.trim() || "";
-      if (q17Val === fibAnswers.q17) score++;
+        function initGrid() {
+            calculateGridSize();
+            const gridElement = document.getElementById('crossword-grid');
+            gridElement.style.gridTemplateRows = `repeat(${gridSize.rows}, 1fr)`;
+            gridElement.style.gridTemplateColumns = `repeat(${gridSize.cols}, 1fr)`;
 
-      let q18Val = document.getElementsByName("q18")[0]?.value.trim() || "";
-      if (q18Val === fibAnswers.q18) score++;
+            const cellData = Array(gridSize.rows).fill(null).map(() => Array(gridSize.cols).fill(null).map(() => ({ partOfWord: false, number: null, letter: '' })));
 
-      let q19Val = document.getElementsByName("q19")[0]?.value.trim() || "";
-      if (q19Val.toLowerCase() === fibAnswers.q19.toLowerCase()) score++;
+            puzzleWords.forEach(pw => {
+                for (let i = 0; i < pw.word.length; i++) {
+                    let r = pw.r;
+                    let c = pw.c;
+                    if (pw.dir === "across") {
+                        c += i;
+                    } else {
+                        r += i;
+                    }
+                    if (r < gridSize.rows && c < gridSize.cols) {
+                        cellData[r][c].partOfWord = true;
+                        cellData[r][c].letter = pw.word[i];
+                        if (i === 0 && cellData[r][c].number === null) {
+                             cellData[r][c].number = pw.num;
+                        }
+                    }
+                }
+            });
+            
+            for (let r = 0; r < gridSize.rows; r++) {
+                gridData[r] = [];
+                for (let c = 0; c < gridSize.cols; c++) {
+                    const cellDiv = document.createElement('div');
+                    cellDiv.classList.add('grid-cell');
+                    cellDiv.dataset.row = r;
+                    cellDiv.dataset.col = c;
 
-      let q20Val = document.getElementsByName("q20")[0]?.value.trim() || "";
-      if (q20Val.toLowerCase() === fibAnswers.q20.toLowerCase()) score++;
+                    if (cellData[r][c].partOfWord) {
+                        const input = document.createElement('input');
+                        input.type = 'text';
+                        input.maxLength = 1;
+                        input.dataset.row = r;
+                        input.dataset.col = c;
+                        input.dataset.correct = cellData[r][c].letter;
+                        
+                        input.addEventListener('input', handleInput);
+                        input.addEventListener('keydown', handleKeyDown);
+                        input.addEventListener('focus', () => highlightWord(r, c));
+                        input.addEventListener('blur', clearHighlights);
 
-      // Show the result
-      let resultDiv = document.getElementById("result");
-      resultDiv.innerHTML = `
-        <p>Name: ${firstName} ${middleName} ${lastName}</p>
-        <p>DOB: ${dob}</p>
-        <p>Your Score: ${score} / ${total}</p>
-      `;
+                        cellDiv.appendChild(input);
+                        gridData[r][c] = input;
 
-      // (Optional) Show answers in #answersOutput for demonstration
-      let answersOutput = document.getElementById("answersOutput");
-      answersOutput.style.display = "block";
-      answersOutput.innerHTML = "<h3>Collected Data (Demo)</h3>" +
-        `<p><strong>First Name:</strong> ${firstName}</p>` +
-        `<p><strong>Middle Name:</strong> ${middleName}</p>` +
-        `<p><strong>Last Name:</strong> ${lastName}</p>` +
-        `<p><strong>Date of Birth:</strong> ${dob}</p>` +
-        `<p><strong>Final Score:</strong> ${score} / ${total}</p>`;
-    }
-  </script>
+                        if (cellData[r][c].number) {
+                            const numberSpan = document.createElement('span');
+                            numberSpan.classList.add('cell-number');
+                            numberSpan.textContent = cellData[r][c].number;
+                            cellDiv.appendChild(numberSpan);
+                        }
+                    } else {
+                        cellDiv.classList.add('empty');
+                        gridData[r][c] = null; // Mark as non-input cell
+                    }
+                    gridElement.appendChild(cellDiv);
+                }
+            }
+        }
+        
+        function handleInput(e) {
+            const input = e.target;
+            const r = parseInt(input.dataset.row);
+            const c = parseInt(input.dataset.col);
+
+            if (input.value.length === 1) {
+                // Try to move to the next cell in the currently focused word's direction
+                const focusedWord = findWordByCell(r,c);
+                if (focusedWord) {
+                    if (focusedWord.dir === "across" && c + 1 < gridSize.cols && gridData[r][c+1]) {
+                       gridData[r][c+1].focus();
+                    } else if (focusedWord.dir === "down" && r + 1 < gridSize.rows && gridData[r+1] && gridData[r+1][c]) {
+                       gridData[r+1][c].focus();
+                    }
+                }
+            }
+        }
+
+        function handleKeyDown(e) {
+            const input = e.target;
+            const r = parseInt(input.dataset.row);
+            const c = parseInt(input.dataset.col);
+
+            switch (e.key) {
+                case "ArrowUp":
+                    if (r > 0 && gridData[r-1][c]) gridData[r-1][c].focus();
+                    e.preventDefault();
+                    break;
+                case "ArrowDown":
+                    if (r < gridSize.rows - 1 && gridData[r+1] && gridData[r+1][c]) gridData[r+1][c].focus();
+                    e.preventDefault();
+                    break;
+                case "ArrowLeft":
+                    if (c > 0 && gridData[r][c-1]) gridData[r][c-1].focus();
+                    e.preventDefault();
+                    break;
+                case "ArrowRight":
+                    if (c < gridSize.cols - 1 && gridData[r][c+1]) gridData[r][c+1].focus();
+                    e.preventDefault();
+                    break;
+                case "Backspace":
+                    if (input.value === '') { // If cell is empty, move to previous and clear
+                         const focusedWord = findWordByCell(r,c);
+                         if (focusedWord) {
+                            if (focusedWord.dir === "across" && c - 1 >= 0 && gridData[r][c-1]) {
+                               gridData[r][c-1].focus();
+                               gridData[r][c-1].value = '';
+                            } else if (focusedWord.dir === "down" && r - 1 >= 0 && gridData[r-1] && gridData[r-1][c]) {
+                               gridData[r-1][c].focus();
+                               gridData[r-1][c].value = '';
+                            }
+                         }
+                         e.preventDefault();
+                    }
+                    break;
+            }
+        }
+
+        function findWordByCell(r, c) {
+            // This is a simplified approach: returns the first word (across then down) that contains this cell.
+            // For cells at intersections, it might not perfectly determine "current" direction without more state.
+            let wordInfo = puzzleWords.find(pw => {
+                if (pw.dir === "across") {
+                    return pw.r === r && c >= pw.c && c < pw.c + pw.word.length;
+                }
+                return null; // Keep searching
+            });
+            if (wordInfo) return wordInfo;
+
+            wordInfo = puzzleWords.find(pw => {
+                 if (pw.dir === "down") {
+                    return pw.c === c && r >= pw.r && r < pw.r + pw.word.length;
+                }
+                return null;
+            });
+            return wordInfo;
+        }
+        
+        function highlightWord(r, c) {
+            clearHighlights(); // Clear previous highlights
+            const wordInfo = findWordByCell(r,c); // Tries to find the word containing this cell
+
+            if (wordInfo) {
+                for (let i = 0; i < wordInfo.word.length; i++) {
+                    let currentR = wordInfo.r;
+                    let currentC = wordInfo.c;
+                    if (wordInfo.dir === "across") {
+                        currentC += i;
+                    } else {
+                        currentR += i;
+                    }
+                    if (gridData[currentR] && gridData[currentR][currentC]) {
+                        gridData[currentR][currentC].parentElement.classList.add('focused-word-cell');
+                    }
+                }
+                // Highlight corresponding clue
+                const clueId = `${wordInfo.dir}-clue-${wordInfo.num}`;
+                document.getElementById(clueId)?.classList.add('font-bold', 'text-blue-600');
+            }
+        }
+
+        function clearHighlights() {
+            document.querySelectorAll('.focused-word-cell').forEach(cell => cell.classList.remove('focused-word-cell'));
+            document.querySelectorAll('#across-clues li, #down-clues li').forEach(clueLi => {
+                clueLi.classList.remove('font-bold', 'text-blue-600');
+            });
+        }
+
+
+        function displayClues() {
+            const acrossCluesList = document.getElementById('across-clues');
+            const downCluesList = document.getElementById('down-clues');
+            acrossCluesList.innerHTML = ''; // Clear existing
+            downCluesList.innerHTML = '';
+
+            puzzleWords.sort((a,b) => a.num - b.num).forEach(pw => {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `<strong>${pw.num}.</strong> ${pw.clue}`;
+                listItem.id = `${pw.dir}-clue-${pw.num}`;
+                listItem.addEventListener('click', () => focusWordInGrid(pw));
+
+                if (pw.dir === "across") {
+                    acrossCluesList.appendChild(listItem);
+                } else {
+                    downCluesList.appendChild(listItem);
+                }
+            });
+        }
+
+        function focusWordInGrid(wordInfo) {
+            if (gridData[wordInfo.r] && gridData[wordInfo.r][wordInfo.c]) {
+                gridData[wordInfo.r][wordInfo.c].focus();
+            }
+        }
+
+        function checkAnswers() {
+            let allCorrect = true;
+            let filledCells = 0;
+            let correctCells = 0;
+
+            for (let r = 0; r < gridSize.rows; r++) {
+                for (let c = 0; c < gridSize.cols; c++) {
+                    const input = gridData[r][c];
+                    if (input) { // If it's an input cell
+                        input.classList.remove('correct', 'incorrect');
+                        const userAnswer = input.value.toUpperCase();
+                        const correctAnswer = input.dataset.correct.toUpperCase();
+                        if (userAnswer !== "") {
+                            filledCells++;
+                            if (userAnswer === correctAnswer) {
+                                input.classList.add('correct');
+                                correctCells++;
+                            } else {
+                                input.classList.add('incorrect');
+                                allCorrect = false;
+                            }
+                        } else {
+                             allCorrect = false; // Any empty cell means not all correct
+                        }
+                    }
+                }
+            }
+            const feedback = document.getElementById('feedback-message');
+            if (filledCells === 0) {
+                feedback.textContent = "The puzzle is empty. Try filling in some answers!";
+            } else if (allCorrect) {
+                feedback.textContent = "Congratulations! You've solved the puzzle correctly!";
+                feedback.className = 'mt-4 text-sm text-green-600 font-semibold';
+            } else if (correctCells === filledCells) {
+                feedback.textContent = "All filled answers are correct, but the puzzle isn't complete yet.";
+                feedback.className = 'mt-4 text-sm text-blue-600 font-semibold';
+            }
+            else {
+                feedback.textContent = "Some answers are incorrect or missing. Keep trying!";
+                feedback.className = 'mt-4 text-sm text-red-600 font-semibold';
+            }
+        }
+
+        function revealAnswers() {
+            for (let r = 0; r < gridSize.rows; r++) {
+                for (let c = 0; c < gridSize.cols; c++) {
+                    const input = gridData[r][c];
+                    if (input) {
+                        input.value = input.dataset.correct;
+                        input.classList.remove('incorrect');
+                        input.classList.add('correct');
+                    }
+                }
+            }
+            const feedback = document.getElementById('feedback-message');
+            feedback.textContent = "All answers revealed!";
+            feedback.className = 'mt-4 text-sm text-gray-600';
+        }
+
+        document.getElementById('check-button').addEventListener('click', checkAnswers);
+        document.getElementById('reveal-button').addEventListener('click', revealAnswers);
+
+        // Initialize
+        initGrid();
+        displayClues();
+    </script>
 </body>
 </html>
